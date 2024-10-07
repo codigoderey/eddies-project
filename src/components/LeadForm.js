@@ -1,24 +1,58 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+"use client";
+import { useState, useContext } from "react";
 import { Textarea } from "@headlessui/react";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { FirebaseContext } from "@/context/FirebaseContext";
+import axios from "axios";
+import baseURL from "@/utils/baseUrl";
 
 export default function LeadForm() {
+  const { addNewCandidate } = useContext(FirebaseContext);
+
+  const [projectType, setProjectType] = useState([]);
+
+  const [candidate, setCandidate] = useState({
+    First: "",
+    Last: "",
+    Email: "",
+    Phone: "",
+    Street: "",
+    City: "",
+    State: "",
+    Zip: "",
+    ProjectType: projectType,
+    ProjectEstimateTimeframe: "",
+    ProjectWorkDoneTimeframe: "",
+    Comments: "",
+  });
+
+  const handleProjectTypeChange = (e) => {
+    if (e.target.checked) {
+      setProjectType([...projectType, e.target.value]);
+      candidate.ProjectType = projectType;
+    } else {
+      setProjectType(projectType.filter((item) => item !== e.target.value));
+    }
+  };
+
+  const handleChange = (e) => {
+    setCandidate({
+      ...candidate,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    candidate.ProjectType = projectType.toString();
+    
+    await axios.post(`${baseURL}/api/leads`, candidate);
+
+    await addNewCandidate(candidate);
+  };
+
   return (
-    <form className="border p-5 rounded -mt-16">
+    <form onSubmit={handleSubmit} className="border p-5 rounded -mt-16">
       <div>
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -39,10 +73,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="first-name"
-                  name="first-name"
+                  name="First"
                   type="text"
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.First}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -57,10 +93,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="last-name"
-                  name="last-name"
+                  name="Last"
                   type="text"
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.Last}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -75,10 +113,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="email"
-                  name="email"
+                  name="Email"
                   type="email"
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.Email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -93,10 +133,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="phone"
-                  name="phone"
+                  name="Phone"
                   type="phone"
                   autoComplete="phone"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.Phone}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -111,10 +153,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="street-address"
-                  name="street-address"
+                  name="Street"
                   type="text"
                   autoComplete="street-address"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.Street}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -129,10 +173,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="city"
-                  name="city"
+                  name="City"
                   type="text"
                   autoComplete="address-level2"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.City}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -147,10 +193,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="region"
-                  name="region"
+                  name="State"
                   type="text"
                   autoComplete="address-level1"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.State}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -165,10 +213,12 @@ export default function LeadForm() {
               <div className="mt-2">
                 <input
                   id="postal-code"
-                  name="postal-code"
+                  name="Zip"
                   type="text"
                   autoComplete="postal-code"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+                  value={candidate.Zip}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -196,10 +246,32 @@ export default function LeadForm() {
                 <div className="relative flex gap-x-3">
                   <div className="flex h-6 items-center">
                     <input
-                      id="decking"
-                      name="decking"
+                      id="bathroom"
+                      name="ProjectType"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Bathroom"
+                      onChange={handleProjectTypeChange}
+                    />
+                  </div>
+                  <div className="text-sm leading-6">
+                    <label
+                      htmlFor="bathroom"
+                      className="font-medium text-gray-900"
+                    >
+                      Bathroom
+                    </label>
+                  </div>
+                </div>
+                <div className="relative flex gap-x-3">
+                  <div className="flex h-6 items-center">
+                    <input
+                      id="decking"
+                      name="ProjectType"
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Decking"
+                      onChange={handleProjectTypeChange}
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -215,9 +287,11 @@ export default function LeadForm() {
                   <div className="flex h-6 items-center">
                     <input
                       id="flooring"
-                      name="flooring"
+                      nname="ProjectType"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Flooring"
+                      onChange={handleProjectTypeChange}
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -233,9 +307,11 @@ export default function LeadForm() {
                   <div className="flex h-6 items-center">
                     <input
                       id="painting"
-                      name="painting"
+                      nname="ProjectType"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Painting"
+                      onChange={handleProjectTypeChange}
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -251,9 +327,11 @@ export default function LeadForm() {
                   <div className="flex h-6 items-center">
                     <input
                       id="roofing"
-                      name="roofing"
+                      name="ProjectType"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Roofing"
+                      onChange={handleProjectTypeChange}
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -262,6 +340,46 @@ export default function LeadForm() {
                       className="font-medium text-gray-900"
                     >
                       Roofing
+                    </label>
+                  </div>
+                </div>
+                <div className="relative flex gap-x-3">
+                  <div className="flex h-6 items-center">
+                    <input
+                      id="chimmey"
+                      name="ProjectType"
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Chimmey"
+                      onChange={handleProjectTypeChange}
+                    />
+                  </div>
+                  <div className="text-sm leading-6">
+                    <label
+                      htmlFor="chimmey"
+                      className="font-medium text-gray-900"
+                    >
+                      Chimmey
+                    </label>
+                  </div>
+                </div>
+                <div className="relative flex gap-x-3">
+                  <div className="flex h-6 items-center">
+                    <input
+                      id="windows"
+                      name="ProjectType"
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-600"
+                      value="Windows and Doors"
+                      onChange={handleProjectTypeChange}
+                    />
+                  </div>
+                  <div className="text-sm leading-6">
+                    <label
+                      htmlFor="windows"
+                      className="font-medium text-gray-900"
+                    >
+                      Windows and Doors
                     </label>
                   </div>
                 </div>
@@ -279,9 +397,11 @@ export default function LeadForm() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-everything"
-                    name="estimate-time"
+                    name="ProjectEstimateTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="1-2 weeks"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-everything"
@@ -293,23 +413,27 @@ export default function LeadForm() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-email"
-                    name="estimate-time"
+                    name="ProjectEstimateTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="2-3 weeks"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-email"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    2-3 months
+                    2-3 weeks
                   </label>
                 </div>
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-nothing"
-                    name="estimate-time"
+                    name="ProjectEstimateTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="1 month or later"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-nothing"
@@ -332,9 +456,11 @@ export default function LeadForm() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-everything"
-                    name="work-done"
+                    name="ProjectWorkDoneTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="1-3 weeks"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-everything"
@@ -346,9 +472,11 @@ export default function LeadForm() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-email"
-                    name="work-done"
+                    name="ProjectWorkDoneTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="1-2 months"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-email"
@@ -360,9 +488,11 @@ export default function LeadForm() {
                 <div className="flex items-center gap-x-3">
                   <input
                     id="push-nothing"
-                    name="work-done"
+                    name="ProjectWorkDoneTimeframe"
                     type="radio"
                     className="h-4 w-4 border-gray-300 text-amber-600 focus:ring-amber-600"
+                    value="3-6 months"
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor="push-nothing"
@@ -386,8 +516,10 @@ export default function LeadForm() {
                   <Textarea
                     rows={6}
                     id="comments"
-                    name="comments"
+                    name="Comments"
                     className="w-full border rounded p-3 text-black focus:ring-amber-600"
+                    value={candidate.Comments}
+                    onChange={handleChange}
                   />
                 </div>
               </div>

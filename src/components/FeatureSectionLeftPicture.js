@@ -42,10 +42,10 @@ const features = [
 ];
 
 export default function FeatureSectionLeftPicture({
-  topText,
-  mainText,
-  subText,
-  imgUrl,
+  topText = "Hire with confidence",
+  mainText = "A better way to build",
+  subText = "Our services are designed to help you succeed. We provide the best quality construction and cleaning services to help you achieve your goals.",
+  imgUrl = "https://images.unsplash.com/photo-1617850687405-a18454436d77?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 }) {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
@@ -89,12 +89,3 @@ export default function FeatureSectionLeftPicture({
     </div>
   );
 }
-
-FeatureSectionLeftPicture.defaultProps = {
-  topText: "Hire with confidence",
-  mainText: "A better way to build",
-  subText:
-    "Our services are designed to help you succeed. We provide the best quality construction and cleaning services to help you achieve your goals.",
-  imgUrl:
-    "https://images.unsplash.com/photo-1617850687405-a18454436d77?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-};

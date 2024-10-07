@@ -3,9 +3,7 @@ import { usePathname } from "next/navigation";
 
 export default function GetQuoteButton() {
   const pathname = usePathname();
-
-
-
+  
   if (pathname === "/quote") return null;
 
   return (

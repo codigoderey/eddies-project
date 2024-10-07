@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import { FirebaseProvider } from "@/context/FirebaseContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         <Navigation />
-        {children}
+        <FirebaseProvider>{children}</FirebaseProvider>
       </body>
     </html>
   );

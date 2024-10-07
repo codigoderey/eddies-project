@@ -31,7 +31,7 @@ export default function QuotePage() {
           >
             {candidates.map((candidate) => (
               <li
-                key={candidate.Email}
+                key={candidate.id}
                 className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-lg"
               >
                 <div className="-mt-px flex divide-x divide-gray-200">

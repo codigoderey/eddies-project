@@ -17,7 +17,7 @@ export default function HeaderSectionWithBgImage({
         />
       </div>
       <div className="mx-auto max-w-2xl text-center flex flex-col h-full justify-center">
-        <p className="flex justify-center font-semibold leading-7 text-amber-600">
+        <p className="flex justify-center font-semibold leading-7 text-amber-700">
           <span className="w-fit bg-white px-3 rounded-lg">{topText}</span>
         </p>
         <h2 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -28,7 +28,7 @@ export default function HeaderSectionWithBgImage({
         </p>
         <div className="mt-10">
           <GetQuoteButton 
-            classes="bg-amber-600 hover:bg-amber-700"
+            classes="bg-amber-700 hover:bg-amber-600"
           />
         </div>
       </div>

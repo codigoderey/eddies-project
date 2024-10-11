@@ -78,8 +78,6 @@ export default function LeadForm() {
       const validationErrors = validateForm();
   
       candidate.ProjectType = projectType.toString();
-  
-      console.log("latest");
 
       if (Object.keys(validationErrors).length === 0) {
 

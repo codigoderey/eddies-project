@@ -27,9 +27,7 @@ export default function HeaderSectionWithBgImage({
           <strong>{bottomText}</strong>
         </p>
         <div className="mt-10">
-          <GetQuoteButton 
-            classes="bg-amber-700 hover:bg-amber-600"
-          />
+          <GetQuoteButton />
         </div>
       </div>
     </div>

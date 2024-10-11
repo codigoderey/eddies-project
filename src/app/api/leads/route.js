@@ -22,8 +22,6 @@ export async function POST(req) {
             <p>You can also visit our website at <a href="https://eddies-project.vercel.app/">https://eddies-project.vercel.app/</a>.</p>
         `
 
-        console.log(htmlBody);
-
         // Send an email to the user
         await sendEmail(
             [body.Email, "rnavedojr@gmail.com", "ewsv03@gmail.com"],
@@ -38,7 +36,7 @@ export async function POST(req) {
     } catch (error) {
         console.error(error);
         return NextResponse.json(
-            {"error": "An error occurred"}, 
+            {"error": error}, 
             { status: 500 }
         );
     }

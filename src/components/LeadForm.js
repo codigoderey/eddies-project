@@ -7,6 +7,7 @@ import { FirebaseContext } from "@/context/FirebaseContext";
 import axios from "axios";
 import baseURL from "@/utils/baseUrl";
 import { TailSpin } from "react-loader-spinner";
+import { toast } from 'react-toastify';
 
 export default function LeadForm() {
   const { addNewCandidate, loading, setLoading } = useContext(FirebaseContext);
@@ -81,9 +82,8 @@ export default function LeadForm() {
 
       if (Object.keys(validationErrors).length === 0) {
 
-        const res = await axios.post(`${baseURL}/api/leads`, candidate);
+        await axios.post(`${baseURL}/api/leads`, candidate);
   
-
         await addNewCandidate(candidate);
   
         setProjectType([]);
@@ -112,6 +112,17 @@ export default function LeadForm() {
           ProjectWorkDoneTimeframe: "",
           Comments: "",
         });
+
+        toast.success('Your information has been submitted successfully. You will hear from us soon.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+
       } else {
         window.scrollTo(0, 0);
   

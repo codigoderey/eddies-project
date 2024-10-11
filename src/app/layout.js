@@ -1,9 +1,11 @@
 import "./globals.css";
 import 'lightbox.js-react/dist/index.css'
+import 'react-toastify/dist/ReactToastify.css';
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FirebaseProvider } from "@/context/FirebaseContext";
+import { ToastContainer } from 'react-toastify';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
+        <ToastContainer />
         <Navigation />
           <FirebaseProvider>{children}</FirebaseProvider>
         <Footer />

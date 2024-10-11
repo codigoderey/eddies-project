@@ -46,6 +46,7 @@ export const FirebaseProvider = ({ children }) => {
     <FirebaseContext.Provider value={{ 
         getAllCandidates,
         addNewCandidate,
+        setLoading,
         candidates,
         loading
      }}>

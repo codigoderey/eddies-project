@@ -1,4 +1,5 @@
 import "./globals.css";
+import 'lightbox.js-react/dist/index.css'
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import { FirebaseProvider } from "@/context/FirebaseContext";
@@ -22,11 +23,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <head>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldfq1oqAAAAAF0Oz5jnXZqsXzXbv6HOHT9xRXu5"></script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >

@@ -79,7 +79,8 @@ export default function LeadForm() {
   
       candidate.ProjectType = projectType.toString();
   
-      console.log("something");
+      console.log("latest");
+
       if (Object.keys(validationErrors).length === 0) {
 
         const res = await axios.post(`${baseURL}/api/leads`, candidate);

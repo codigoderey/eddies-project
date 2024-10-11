@@ -1,7 +1,6 @@
 "use client";
 
 import FeatureSectionLeftPicture from "@/components/FeatureSectionLeftPicture";
-import GetQuoteButton from "@/components/GetQuoteButton";
 import HeaderSectionWithBgImage from "@/components/HeaderSectionWithBgImage";
 
 export default function Home() {

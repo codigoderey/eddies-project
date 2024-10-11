@@ -2,8 +2,8 @@ import "./globals.css";
 import 'lightbox.js-react/dist/index.css'
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
-import { FirebaseProvider } from "@/context/FirebaseContext";
 import Footer from "@/components/Footer";
+import { FirebaseProvider } from "@/context/FirebaseContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,11 +26,15 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        {/* add favicon */}
+        <link rel="icon" href="/images/circle-logo.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         <Navigation />
-        <FirebaseProvider>{children}</FirebaseProvider>
+          <FirebaseProvider>{children}</FirebaseProvider>
         <Footer />
       </body>
     </html>

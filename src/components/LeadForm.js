@@ -77,13 +77,14 @@ export default function LeadForm() {
     try {
       const validationErrors = validateForm();
   
-      console.log(validateForm);
-  
       candidate.ProjectType = projectType.toString();
   
+      console.log("something");
       if (Object.keys(validationErrors).length === 0) {
-        await axios.post(`${baseURL}/api/leads`, candidate);
+
+        const res = await axios.post(`${baseURL}/api/leads`, candidate);
   
+
         await addNewCandidate(candidate);
   
         setProjectType([]);
@@ -118,7 +119,7 @@ export default function LeadForm() {
         setIsOpen(true);
   
         document.querySelectorAll("input").forEach((input) => {
-          console.log(input.value);
+
           if (input.type === "checkbox" || input.type === "radio") {
             if (!input.checked && input.value === "") {
               input.classList.add("ring-2", "ring-red-500");

@@ -5,6 +5,7 @@ import "lightbox.js-react/dist/index.css";
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BusinessOwnerBanner from "@/components/BusinessOwnedBanner";
 import { FirebaseProvider } from "@/context/FirebaseContext";
 import { ToastContainer } from "react-toastify";
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
 				<ToastContainer />
+				<BusinessOwnerBanner />
 				<Navigation />
 				<FirebaseProvider>{children}</FirebaseProvider>
 				<Footer />

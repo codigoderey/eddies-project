@@ -48,10 +48,10 @@ export default function BusinessOwnerBanner() {
 			</div>
 			{isOpen && (
 				<p className="py-2">
-					4ZImprov is owned by a proud US Army veteran, instilled with the
-					values of integrity, hard work, and commitment. These principles are
-					at the core of how they approach their business, ensuring customer
-					satisfaction and top-quality service. To learn more about it{" "}
+					4ZImprov is owned by a proud US veteran, instilled with the values of
+					integrity, duty and respect. These principles are at the core of how
+					they approach their business, ensuring customer satisfaction and
+					top-quality service. To learn more about it{" "}
 					<a className="text-amber-100 underline" href="/about">
 						vist our about page
 					</a>

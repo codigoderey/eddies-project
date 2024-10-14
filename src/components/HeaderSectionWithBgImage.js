@@ -22,7 +22,7 @@ export default function HeaderSectionWithBgImage({
 						{topText}
 					</span>
 				</p>
-				<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white  my-10">
+				<h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white  my-10">
 					{mainText}
 				</h2>
 				<p className="text-lg text-white md:text-2xl">

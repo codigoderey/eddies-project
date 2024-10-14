@@ -2,6 +2,8 @@
 import { createContext, useState } from "react";
 import firebase from "@/firebase";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+// get cloud storage from firebase
+import { getStorage } from "firebase/storage";
 
 export const FirebaseContext = createContext(null);
 
@@ -9,6 +11,8 @@ export const FirebaseProvider = ({ children }) => {
 	const [candidates, setCandidates] = useState([]);
 
 	const [loading, setLoading] = useState(false);
+
+	const storage = getStorage(firebase, "gs://eddies-ed7ea.appspot.com");
 
 	const getAllCandidates = async () => {
 		try {

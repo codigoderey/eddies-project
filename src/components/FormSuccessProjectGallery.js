@@ -4,7 +4,6 @@ import { SlideshowLightbox, initLightboxJS } from "lightbox.js-react";
 export default function FormSuccessProjectGallery() {
 	useEffect(() => {
 		initLightboxJS(process.env.NEXT_PUBLIC_LIGHTBOX_PRIVATE_KEY, "Individual");
-		console.log("Init lightboxJS");
 	});
 
 	return (

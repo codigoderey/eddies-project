@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BusinessOwnerBanner from "@/components/BusinessOwnedBanner";
 import { FirebaseProvider } from "@/context/FirebaseContext";
+import { AuthProvider } from "@/context/AuthContext";
 import { ToastContainer } from "react-toastify";
 
 const geistSans = localFont({
@@ -36,11 +37,15 @@ export default function RootLayout({ children }) {
 			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
-				<ToastContainer />
-				<BusinessOwnerBanner />
-				<Navigation />
-				<FirebaseProvider>{children}</FirebaseProvider>
-				<Footer />
+				<AuthProvider>
+					<FirebaseProvider>
+						<ToastContainer />
+						<BusinessOwnerBanner />
+						<Navigation />
+						{children}
+						<Footer />
+					</FirebaseProvider>
+				</AuthProvider>
 			</body>
 		</html>
 	);

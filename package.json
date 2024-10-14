@@ -15,7 +15,7 @@
     "firebase": "^10.14.0",
     "gridjs": "^6.2.0",
     "gridjs-react": "^6.1.1",
-    "lightbox.js-react": "^1.1.5",
+    "lightbox.js-react": "^1.1.6",
     "next": "14.2.13",
     "nodemailer": "^6.9.15",
     "react": "^18",

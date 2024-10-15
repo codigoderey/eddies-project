@@ -7,7 +7,8 @@ function classNames(...classes) {
 }
 
 export default function AdminTabs() {
-	const { getAllCandidates, candidates } = useContext(FirebaseContext);
+	const { getAllCandidates, candidates, signOutUser } =
+		useContext(FirebaseContext);
 
 	const [listType, setListType] = useState("candidates");
 
@@ -51,8 +52,6 @@ export default function AdminTabs() {
 		setCurrentTab(tabName);
 		setListType(tabName);
 	};
-
-	console.log(listType);
 
 	return (
 		<div className="my-16">

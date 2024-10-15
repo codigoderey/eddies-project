@@ -7,8 +7,8 @@ import {
 	sendSignInLinkToEmail,
 	isSignInWithEmailLink,
 	signInWithEmailLink,
-	getAdditionalUserInfo,
-	onAuthStateChanged
+	onAuthStateChanged,
+	signOut
 } from "firebase/auth";
 
 import baseURL from "@/utils/baseUrl";
@@ -66,13 +66,25 @@ export const AuthProvider = ({ children }) => {
 		});
 	};
 
+	const signOutUser = () => {
+		console.log("Signing out...");
+		signOut(auth)
+			.then(() => {
+				setUser(null);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
 	return (
 		<AuthContext.Provider
 			value={{
 				sendEmailCode,
 				validateSignedUser,
 				user,
-				verifyUserAuthChange
+				verifyUserAuthChange,
+				signOutUser
 			}}>
 			{children}
 		</AuthContext.Provider>

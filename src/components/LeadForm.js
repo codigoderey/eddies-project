@@ -149,7 +149,6 @@ export default function LeadForm() {
 						}
 					}
 				});
-
 				// Additional validation for ProjectType
 				if (projectType.length === 0) {
 					document
@@ -158,7 +157,6 @@ export default function LeadForm() {
 							input.classList.add("ring-2", "ring-red-500");
 						});
 				}
-
 				// Additional validation for ProjectEstimateTimeframe
 				if (candidate.ProjectEstimateTimeframe === "") {
 					document
@@ -167,7 +165,6 @@ export default function LeadForm() {
 							input.classList.add("ring-2", "ring-red-500");
 						});
 				}
-
 				// Additional validation for ProjectWorkDoneTimeframe
 				if (candidate.ProjectWorkDoneTimeframe === "") {
 					document
@@ -192,8 +189,8 @@ export default function LeadForm() {
 			{successfulRequest ? (
 				<FormSuccessProjectGallery />
 			) : (
-				<div>
-					<form onSubmit={handleSubmit} className="border p-5 rounded -mt-16">
+				<div className="py-16 mx-auto max-w-7xl px-6 lg:px-8">
+					<form onSubmit={handleSubmit} className="border p-5 rounded">
 						<div>
 							<div className="border-b border-gray-900/10 pb-12">
 								<h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -216,7 +213,7 @@ export default function LeadForm() {
 												name="First"
 												type="text"
 												autoComplete="given-name"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.First}
 												onChange={handleChange}
 											/>
@@ -235,7 +232,7 @@ export default function LeadForm() {
 												name="Last"
 												type="text"
 												autoComplete="family-name"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.Last}
 												onChange={handleChange}
 											/>
@@ -254,7 +251,7 @@ export default function LeadForm() {
 												name="Email"
 												type="email"
 												autoComplete="email"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.Email}
 												onChange={handleChange}
 											/>
@@ -273,7 +270,7 @@ export default function LeadForm() {
 												name="Phone"
 												type="phone"
 												autoComplete="phone"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.Phone}
 												onChange={handleChange}
 											/>
@@ -292,7 +289,7 @@ export default function LeadForm() {
 												name="Street"
 												type="text"
 												autoComplete="street-address"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.Street}
 												onChange={handleChange}
 											/>
@@ -311,7 +308,7 @@ export default function LeadForm() {
 												name="City"
 												type="text"
 												autoComplete="address-level2"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.City}
 												onChange={handleChange}
 											/>
@@ -330,7 +327,7 @@ export default function LeadForm() {
 												name="State"
 												type="text"
 												autoComplete="address-level1"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.State}
 												onChange={handleChange}
 											/>
@@ -349,7 +346,7 @@ export default function LeadForm() {
 												name="Zip"
 												type="text"
 												autoComplete="postal-code"
-												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
+												className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-amber-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 												value={candidate.Zip}
 												onChange={handleChange}
 											/>

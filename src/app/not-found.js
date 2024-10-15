@@ -1,14 +1,16 @@
 // app/not-found.js
-import Link from 'next/link';
+import JumbotronCenteredWithButton from "@/components/JumbotronCenteredWithButton";
+import Link from "next/link";
 
 export default function NotFound() {
-  return (
-    <div className='text-black' style={{ textAlign: 'center', marginTop: '200px' }}>
-      <h1 className='text-4xl font-bold mb-3'>404 - Page Not Found</h1>
-      <p className='mb-10'>Sorry, the page you are looking for does not exist.</p>
-      <Link className='text-amber-950 underline' href="/">
-        Go to the homepage
-      </Link>
-    </div>
-  );
+	return (
+		<JumbotronCenteredWithButton
+			topText="404 Error"
+			mainText="Page Not Found"
+			subText="The page you was looking for does not exist, click the link below to go to the home page."
+			hrefLink="/"
+			hrefText="Go to home page"
+			hasButton={true}
+		/>
+	);
 }

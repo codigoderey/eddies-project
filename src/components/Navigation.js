@@ -14,8 +14,8 @@ export default function Navigation() {
 			<header className="bg-white">
 				<nav
 					aria-label="Global"
-					className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-					<div className="flex text-amber-950 font-bold text-4xl">
+					className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-6">
+					<div className="flex text-amber-950 font-bold text-3xl">
 						<Link href="/">4Z Improv</Link>
 					</div>
 					<div className="flex lg:hidden">

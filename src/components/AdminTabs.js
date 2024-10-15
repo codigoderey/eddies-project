@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { FirebaseContext } from "@/context/FirebaseContext";
 import CandidatesList from "./CandidatesList";
+import ImagesHandler from "./ImagesHandler";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -20,27 +21,23 @@ export default function AdminTabs() {
 	const tabs = [
 		{
 			name: "Candidates",
-			href: "/admin/candidates",
 			current: true,
 			content: <CandidatesList candidates={candidates} />
 		},
 		{
 			name: "Clients",
-			href: "/admin/clients",
 			current: false,
 			content: <CandidatesList candidates={candidates} />
 		},
 		{
 			name: "Subscriptions",
-			href: "/admin/subscriptions",
 			current: false,
 			content: <CandidatesList candidates={candidates} />
 		},
 		{
-			name: "More...",
-			href: "/admin/more",
+			name: "Upload Images",
 			current: false,
-			content: <CandidatesList candidates={candidates} />
+			content: <ImagesHandler />
 		}
 	];
 

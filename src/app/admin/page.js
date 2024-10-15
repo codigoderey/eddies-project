@@ -29,7 +29,7 @@ export default function Admin() {
 			} finally {
 				setLoading(false);
 			}
-		}, 1000);
+		}, 1500);
 	}, []);
 
 	const handleSubmit = (e) => {

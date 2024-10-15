@@ -25,7 +25,9 @@ const geistMono = localFont({
 export const metadata = {
 	title: "4zImprov - Transformations with Construction and Cleaning Services",
 	description:
-		"Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small."
+		"Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small.",
+	keywords:
+		"4zImprov, construction services near me, construction services ridge mountains, best construction services in North Carolina, veteran own construction services"
 };
 
 export default function RootLayout({ children }) {

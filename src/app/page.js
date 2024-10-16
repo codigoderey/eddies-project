@@ -9,7 +9,7 @@ export default function Home() {
 		<main>
 			<HeaderSectionWithBgImage
 				topText="Welcome to 4zImprov"
-				mainText="Transformations with Construction and Cleaning Services"
+				mainText="Transformations with Construction and Pressure Washing Services"
 				bottomText="Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small."
 			/>
 			<FeatureSectionLeftPicture />

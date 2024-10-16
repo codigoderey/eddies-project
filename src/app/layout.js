@@ -23,7 +23,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-	title: "4zImprov - Transformations with Construction and Cleaning Services",
+	title:
+		"4zImprov - Transformations with Construction and Pressure Washing Services",
 	description:
 		"Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small.",
 	keywords:

@@ -8,9 +8,9 @@ export const imageCategories = [
 	"flooring",
 	"painting",
 	"roofing",
-	"chimmey",
+	"chimney",
 	"windows and doors",
-	"cleaning"
+	"pressure washing"
 ];
 
 export default function ImagesHandler() {

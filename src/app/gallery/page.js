@@ -13,7 +13,7 @@ export default function Gallery() {
 		"flooring",
 		"painting",
 		"roofing",
-		"chimmey",
+		"chimney",
 		"windows and doors"
 	];
 

@@ -10,9 +10,9 @@ const features = [
 		icon: CheckBadgeIcon
 	},
 	{
-		name: "Chimmey Construction",
+		name: "Chimney Construction",
 		description:
-			"We do chimmey remodeling and construction. Our experts provide excelent work in developing chimmeys.",
+			"We do chimney remodeling and construction. Our experts provide excelent work in developing chimmeys.",
 		icon: CheckBadgeIcon
 	},
 	{
@@ -40,9 +40,9 @@ const features = [
 		icon: CheckBadgeIcon
 	},
 	{
-		name: "Cleaning Services",
+		name: "Pressure Washing",
 		description:
-			"Our cleaning services are designed to keep your home and office clean. We offer professional cleaning solutions.",
+			"Get rid of tough dirt and grime with our professional pressure washing services. We use high-quality products.",
 		icon: CheckBadgeIcon
 	}
 ];
@@ -50,7 +50,7 @@ const features = [
 export default function FeatureSectionLeftPicture({
 	topText = "Hire with confidence",
 	mainText = "A better way to build",
-	subText = "Our services are designed to help you succeed. We provide the best quality construction and cleaning services to help you achieve your goals.",
+	subText = "Our services are designed to help you succeed. We provide the best quality construction and pressure washing services to help you achieve your goals.",
 	imgUrl = "https://images.unsplash.com/photo-1617850687405-a18454436d77?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }) {
 	return (

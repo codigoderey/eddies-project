@@ -56,7 +56,35 @@ export const metadata = {
 		"windows and doors services near me",
 		"windows and doors services in north carolina",
 		"windows and doors services in north carolina near mountains blue ridge",
-		"windows and doors services in mountains blue ridge"
+		"windows and doors services in mountains blue ridge",
+		"construction services near Boone, North Carolina",
+		"construction services in Boone, North Carolina",
+		"construction services in Watauga County, North Carolina",
+		"construction services in Ashe  County, North Carolina",
+		"bathroom renovation services near Boone, North Carolina",
+		"bathroom renovation services in Boone, North Carolina",
+		"bathroom renovation services in Watauga County, North Carolina",
+		"bathroom renovation services in Ashe  County, North Carolina",
+		"chimney remodeling or construction services near Boone, North Carolina",
+		"chimney remodeling or construction services in Boone, North Carolina",
+		"chimney remodeling or construction services in Watauga County, North Carolina",
+		"chimney remodeling or construction services in Ashe  County, North Carolina",
+		"pressure washing services near Boone, North Carolina",
+		"pressure washing services in Boone, North Carolina",
+		"pressure washing services in Watauga County, North Carolina",
+		"pressure washing services in Ashe  County, North Carolina",
+		"painting services near Boone, North Carolina",
+		"painting services in Boone, North Carolina",
+		"painting services in Watauga County, North Carolina",
+		"painting services in Ashe  County, North Carolina",
+		"roofing services near Boone, North Carolina",
+		"roofing services in Boone, North Carolina",
+		"roofing services in Watauga County, North Carolina",
+		"roofing services in Ashe  County, North Carolina",
+		"windows and doors services near Boone, North Carolina",
+		"windows and doors services in Boone, North Carolina",
+		"windows and doors services in Watauga County, North Carolina",
+		"windows and doors services in Ashe  County, North Carolina"
 	],
 	openGraph: {
 		title:
@@ -65,9 +93,7 @@ export const metadata = {
 			"Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small.",
 		images: [
 			{
-				url: "/images/circle-logo.png",
-				width: 800,
-				height: 600
+				url: "/images/circle-logo.png"
 			}
 		]
 	}

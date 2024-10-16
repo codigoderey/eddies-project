@@ -522,7 +522,7 @@ export default function LeadForm() {
 														<label
 															htmlFor="pressureWashing"
 															className="font-medium text-gray-900">
-															Pressure washing
+															Pressure Washing
 														</label>
 													</div>
 												</div>

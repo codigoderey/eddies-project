@@ -10,9 +10,9 @@ const features = [
 		icon: CheckBadgeIcon
 	},
 	{
-		name: "Chimney Construction",
+		name: "Chimmey Construction",
 		description:
-			"We do chimney remodeling and construction. Our experts provide excelent work in developing chimneys.",
+			"We do chimmey remodeling and construction. Our experts provide excelent work in developing chimmeys.",
 		icon: CheckBadgeIcon
 	},
 	{

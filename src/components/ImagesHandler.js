@@ -8,7 +8,7 @@ export const imageCategories = [
 	"flooring",
 	"painting",
 	"roofing",
-	"chimney",
+	"chimmey",
 	"windows and doors",
 	"cleaning"
 ];

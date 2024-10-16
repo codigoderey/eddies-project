@@ -38,6 +38,12 @@ const features = [
 		description:
 			"Upgrade your windows and doors for better insulation and security. Our products are energy-efficient and stylish.",
 		icon: CheckBadgeIcon
+	},
+	{
+		name: "Cleaning Services",
+		description:
+			"Our cleaning services are designed to keep your home and office clean. We offer professional cleaning solutions.",
+		icon: CheckBadgeIcon
 	}
 ];
 

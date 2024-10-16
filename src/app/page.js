@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<main>
 			<HeaderSectionWithBgImage
-				topText="Serving North Carolina since 2000"
+				topText="Serving North Carolina since 2020"
 				mainText="Transformations with Construction and Pressure Washing Services"
 				bottomText="Minimizing hassle, maximizing quality. Our services ensure top-notch results with minimal disruption. Experience excellence in every project, big or small."
 			/>

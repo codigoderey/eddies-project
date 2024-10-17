@@ -84,7 +84,25 @@ export const metadata = {
 		"windows and doors services near Boone, North Carolina",
 		"windows and doors services in Boone, North Carolina",
 		"windows and doors services in Watauga County, North Carolina",
-		"windows and doors services in Ashe  County, North Carolina"
+		"windows and doors services in Ashe  County, North Carolina",
+		"construction services in Sugar Mountain, North Carolina",
+		"construction services in Grandfather, North Carolina",
+		"construction services in Mountain City, North Carolina",
+		"construction services in Trade, North Carolina",
+		"construction services in West Jefferson, North Carolina",
+		"construction services in Seven Devils, North Carolina",
+		"construction services in Blowing Rock, North Carolina",
+		"construction services in Banner Elk, North Carolina",
+		"construction services in Beech Mountain, North Carolina",
+		"construction services in Deep Gap, North Carolina",
+		"construction services in Elk Park, North Carolina",
+		"construction services in Fleetwood, North Carolina",
+		"construction services in Laurel Spring, North Carolina",
+		"construction services in Sugar Grove, North Carolina",
+		"construction services in Todd, North Carolina",
+		"construction services in Valle Crucis, North Carolina",
+		"construction services in Vilas, North Carolina",
+		"construction services in Zionville, North Carolina"
 	],
 	openGraph: {
 		title:

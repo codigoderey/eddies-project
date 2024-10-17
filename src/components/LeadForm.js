@@ -9,7 +9,8 @@ import axios from "axios";
 import baseURL from "@/utils/baseUrl";
 import { TailSpin } from "react-loader-spinner";
 import { toast } from "react-toastify";
-import FormSuccessProjectGallery from "./FormSuccessProjectGallery";
+import StaticGallery from "@/components/StaticGallery";
+import { staticGalleryConstruction } from "@/staticGalleries";
 
 export default function LeadForm() {
 	const { addNewCandidate, loading, setLoading } = useContext(FirebaseContext);
@@ -187,7 +188,7 @@ export default function LeadForm() {
 	return (
 		<>
 			{successfulRequest ? (
-				<FormSuccessProjectGallery />
+				<StaticGallery>{staticGalleryConstruction}</StaticGallery>
 			) : (
 				<div className="py-16 mx-auto max-w-7xl px-6 lg:px-8">
 					<form onSubmit={handleSubmit} className="border p-5 rounded">

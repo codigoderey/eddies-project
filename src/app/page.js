@@ -3,6 +3,8 @@
 import FeatureSectionLeftPicture from "@/components/FeatureSectionLeftPicture";
 import HeaderSectionWithBgImage from "@/components/HeaderSectionWithBgImage";
 import JumbotronCenteredWithButton from "@/components/JumbotronCenteredWithButton";
+import StaticGallery from "@/components/StaticGallery";
+import { staticGalleryVeteran } from "@/staticGalleries";
 
 export default function Home() {
 	return (
@@ -21,6 +23,7 @@ export default function Home() {
 				hrefText="View gallery"
 				hasButton={true}
 			/>
+			<StaticGallery>{staticGalleryVeteran}</StaticGallery>
 		</main>
 	);
 }

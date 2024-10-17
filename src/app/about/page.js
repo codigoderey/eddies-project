@@ -1,6 +1,8 @@
 "use client";
 
 import JumbotronCenteredWithButton from "@/components/JumbotronCenteredWithButton";
+import StaticGallery from "@/components/StaticGallery";
+import { staticGalleryVeteran } from "@/staticGalleries";
 
 export default function About() {
 	return (
@@ -13,6 +15,7 @@ export default function About() {
 				hrefText="Get an estimate"
 				hasButton={true}
 			/>
+			<StaticGallery>{staticGalleryVeteran}</StaticGallery>
 		</>
 	);
 }

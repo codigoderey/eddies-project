@@ -188,7 +188,9 @@ export default function LeadForm() {
 	return (
 		<>
 			{successfulRequest ? (
-				<StaticGallery>{staticGalleryConstruction}</StaticGallery>
+				<StaticGallery text="Take a look at the beautiful work we can do for you. Go for the living that you deserve. We can help with that. If you want to contact us with any questions, please call 910-336-2054 or email info@4zimprov.com.">
+					{staticGalleryConstruction}
+				</StaticGallery>
 			) : (
 				<div className="py-16 mx-auto max-w-7xl px-6 lg:px-8">
 					<form onSubmit={handleSubmit} className="border p-5 rounded">

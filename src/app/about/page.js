@@ -15,7 +15,9 @@ export default function About() {
 				hrefText="Get an estimate"
 				hasButton={true}
 			/>
-			<StaticGallery>{staticGalleryVeteran}</StaticGallery>
+			<StaticGallery text="Proudly veteran owned and operated business. Integrity, duty and respect also translate to our work. We can help with your home or business project needs.">
+				{staticGalleryVeteran}
+			</StaticGallery>
 		</>
 	);
 }

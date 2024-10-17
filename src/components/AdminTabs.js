@@ -22,17 +22,20 @@ export default function AdminTabs() {
 		{
 			name: "Candidates",
 			current: true,
-			content: <CandidatesList candidates={candidates} />
+			content: <CandidatesList candidates={[]} />
+			// content: <CandidatesList candidates={candidates} />
 		},
 		{
 			name: "Clients",
 			current: false,
-			content: <CandidatesList candidates={candidates} />
+			content: <CandidatesList candidates={[]} />
+			// content: <CandidatesList candidates={candidates} />
 		},
 		{
 			name: "Subscriptions",
 			current: false,
-			content: <CandidatesList candidates={candidates} />
+			content: <CandidatesList candidates={[]} />
+			// content: <CandidatesList candidates={candidates} />
 		},
 		{
 			name: "Upload Images",

@@ -22,5 +22,5 @@ export const sendEmail = async (mail, subject, htmlBody) => {
 		html: htmlBody
 	});
 
-	console.log(`Message sent: ${info.messageId}`);
+	console.info(`Message sent: ${info.messageId}`);
 };

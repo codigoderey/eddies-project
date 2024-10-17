@@ -1,10 +1,18 @@
 "use client";
 
+import { useState, useEffect, useContext } from "react";
+import { FirebaseContext } from "@/context/FirebaseContext";
 import JumbotronCentered from "@/components/JumbotronCenteredWithButton";
-import { useState } from "react";
+import { SlideshowLightbox } from "lightbox.js-react";
+import Image from "next/image";
 
 export default function Gallery() {
+	const { loading, documents, fetchDocumentsByCategory } =
+		useContext(FirebaseContext);
+
 	const [selection, setSelection] = useState("all");
+
+	const [images, setImages] = useState([]);
 
 	const projectsCategories = [
 		"all",
@@ -13,14 +21,33 @@ export default function Gallery() {
 		"flooring",
 		"painting",
 		"roofing",
-		"chimney",
-		"windows and doors"
+		"chimmey",
+		"windows and doors",
+		"pressure washing"
 	];
 
 	const selectImagesCategory = (category) => {
-		console.log(category);
 		setSelection(category);
 	};
+
+	useEffect(() => {
+		const fetchImages = async () => {
+			const docs = await fetchDocumentsByCategory(selection);
+
+			let imgs = [];
+
+			docs.forEach((doc) => {
+				let o = {};
+				o.src = doc.ImageUrl;
+				o.alt = doc.Description;
+				imgs.push(o);
+			});
+
+			setImages(imgs);
+		};
+
+		fetchImages();
+	}, [selection]);
 
 	return (
 		<main>
@@ -46,6 +73,38 @@ export default function Gallery() {
 						</button>
 					))}
 				</nav>
+
+				{loading ? (
+					<p className="text-center text-black my-20">Loading...</p>
+				) : (
+					<div className="container mx-auto">
+						{documents.length === 0 ? (
+							<p className="text-center text-black my-20">
+								No images to show...
+							</p>
+						) : (
+							<SlideshowLightbox
+								className="grid grid-cols-3 gap-2 my-20"
+								images={images}
+								lightboxIdentifier="lightbox"
+								framework="next"
+								theme="day"
+								showThumbnails={true}>
+								{images.map((image) => (
+									<Image
+										src={image.src}
+										alt={image.alt}
+										height={500}
+										width={500}
+										data-lightboxjs="lightbox"
+										className="w-full h-full object-cover"
+										quality={80}
+									/>
+								))}
+							</SlideshowLightbox>
+						)}
+					</div>
+				)}
 			</section>
 		</main>
 	);

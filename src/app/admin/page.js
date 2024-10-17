@@ -5,8 +5,11 @@ import { AuthContext } from "@/context/AuthContext";
 import { toast } from "react-toastify";
 import Jumbotron from "@/components/Jumbotron";
 import AdminDashBoard from "@/components/AdminDashboard";
+import { useRouter } from "next/navigation";
 
 export default function Admin() {
+	const router = useRouter();
+
 	const [loading, setLoading] = useState(true);
 
 	const [email, setEmail] = useState("");
@@ -34,20 +37,26 @@ export default function Admin() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		if (email === "" || !email) {
 			toast.warning("Your email is invalid, please enter a valid email.", {
 				autoClose: 8000
 			});
 			return;
 		}
+
 		sendEmailCode(email);
 
 		toast.success(
-			"An email was sent to your inbox, please verify and get the code and type it here for validation. Check your spam if you don't see it within 3 minutes.",
+			"An email was sent to your inbox, please verify and click the link to login. Check your spam if you don't see it within 3 minutes.",
 			{
 				autoClose: 8000
 			}
 		);
+
+		setEmail("");
+
+		router.push("/");
 	};
 
 	if (loading) {

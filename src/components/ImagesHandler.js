@@ -8,7 +8,7 @@ export const imageCategories = [
 	"flooring",
 	"painting",
 	"roofing",
-	"chimney",
+	"chimmey",
 	"windows and doors",
 	"pressure washing"
 ];
@@ -60,9 +60,9 @@ export default function ImagesHandler() {
 				imageData.Description == ""
 			)
 				return toast.error(
-					"Please select a file, category and description before uploading...",
+					"Please verify that you have selected an image category, add a description and select a file before submitting...",
 					{
-						autoClose: 8000
+						autoClose: 10000
 					}
 				);
 
@@ -71,8 +71,6 @@ export default function ImagesHandler() {
 			imageData.Category = imageData.Category.toLowerCase();
 
 			uploadFileAndGetDownloadURL(imageData.File, "images").then((url) => {
-				console.log(url);
-
 				setImageData({
 					...imageData,
 					ImageUrl: url
@@ -134,6 +132,7 @@ export default function ImagesHandler() {
 										className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
 										value={imageData.Category}
 										onChange={handleInputChange}>
+										<option value="">--- Select category ---</option>
 										{imageCategories.map((category) => (
 											<option key={category} value={category}>
 												{category}

@@ -32,8 +32,8 @@ export const AuthProvider = ({ children }) => {
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
-				console.log(errorCode);
-				console.log(errorMessage);
+				console.error(errorCode);
+				console.error(errorMessage);
 			});
 	};
 
@@ -67,7 +67,6 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	const signOutUser = () => {
-		console.log("Signing out...");
 		signOut(auth)
 			.then(() => {
 				setUser(null);

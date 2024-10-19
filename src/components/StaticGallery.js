@@ -33,12 +33,7 @@ export default function StaticGallery({
           roundedImages={true}
           modalClose="clickOutside"
           fullScreen={true}
-          captions={images?.map((image) => image.alt)}
-          captionStyle={{
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            color: "black",
-            fontSize: "1.5rem",
-          }}
+          disableImageZoom={false}    
         >
           {images?.map((image) => (
             <Image

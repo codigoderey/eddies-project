@@ -73,18 +73,31 @@ export default function Footer() {
 	return (
 		<footer className="bg-black">
 			<div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-				<nav aria-label="Footer" className="mb-4 sm:space-x-12">
-					<div className="pb-6 text-center">
+				<nav aria-label="Footer" className="sm:space-x-12 mb-6">
+					<div className="text-center">
 						{navigation.main.map((item) => (
 							<a
 								key={item.name}
 								href={item.href}
-								className="text-sm leading-6 text-gray-50 hover:text-gray-200 p-3 block md:inline-block underline">
+								className="text-sm leading-6 text-gray-50 hover:text-gray-200 px-3 block md:inline-block underline">
 								{item.name}
 							</a>
 						))}
 					</div>
 				</nav>
+				<div className="flex items-center justify-center mb-6">
+  <a 
+    href="mailto:4zimprov@4zimprov.com?subject=Client%20request" 
+    className="text-center text-sm text-leading-6 text-gray-50 mr-2 underline">
+    <strong>Email:</strong> 4zimprov@4zimprov.com
+  </a>
+  <a 
+    href="tel:8287195325" 
+    className="text-center text-sm text-leading-6 text-gray-50 ml-2 underline ">
+    <strong>Phone:</strong> 828-719-5325
+  </a>
+</div>
+
 				<hr />
 				<p className="mt-10 text-center text-xs leading-5 text-gray-50">
 					&copy; {new Date().getFullYear()} 4zImprov, Inc. All rights reserved.

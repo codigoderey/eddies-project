@@ -6,11 +6,9 @@ export default function StaticGallery({
   images,
   text = "Take a look at the beautiful work we can do for you. Go for the living that you deserve. We can help with that. If you want to contact us with any questions, please call 910-336-2054 or email info@4zimprov.com.",
 }) {
-
   useEffect(() => {
     initLightboxJS(process.env.NEXT_PUBLIC_LIGHTBOX_PRIVATE_KEY, "Individual");
-
-  });
+  }, []);
 
   return (
     <section className="mt-16 mb-32">
@@ -23,19 +21,39 @@ export default function StaticGallery({
           framework="next"
           theme="day"
           showThumbnails={true}
+          iconColor="#D97706"
+          thumbnailBorder="#D97706"
+          slideshowInterval={5000}
+          animateThumbnails={true}
+          imgAnimation="fade"
+          rightArrowClassname="text-amber-600"
+          leftArrowClassname="text-amber-600"
+          roundedImages={true}
+          modalClose="clickOutside"
+          fullScreen={true}
+          captions={images?.map((image) => image.alt)}
+          captionStyle={{
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            color: "black",
+            fontSize: "1.5rem",
+          }}
         >
-			{images?.map((image) => (
-				<Image
-					src={image.src}
-					alt={image.alt}
-					height={500}
-					width={500}
-					data-lightboxjs="lightbox"
-					className="w-full h-full object-cover"
-					quality={80}
-				/>
-			))}
-		</SlideshowLightbox>
+          {images?.map((image) => (
+            <div className="relative" key={image.src}>
+              <Image
+                priority
+                src={image.src}
+                alt={image.alt}
+                height={500}
+                width={500}
+                data-lightboxjs="lightbox"
+                className="w-full h-full object-cover rounded-lg"
+                quality={100}
+              />
+              <div className="absolute bottom-0 left-0 text-black font-bold p-1 bg-white/70 rounded m-1">{image.alt}</div>
+            </div>
+          ))}
+        </SlideshowLightbox>
       </div>
     </section>
   );

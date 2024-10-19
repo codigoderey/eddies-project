@@ -191,7 +191,7 @@ export default function LeadForm() {
 
 	return (
 		<>
-			{!successfulRequest ? (
+			{successfulRequest ? (
 				<StaticGallery images={staticGalleryConstruction} text="Take a look at the beautiful work we can do for you. Go for the living that you deserve. We can help with that. If you want to contact us with any questions, please call 910-336-2054 or email info@4zimprov.com.">
 				</StaticGallery>
 			) : (

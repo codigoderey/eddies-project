@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { Textarea } from "@headlessui/react";
 import Link from "next/link";
@@ -37,6 +37,10 @@ export default function LeadForm() {
 		ProjectWorkDoneTimeframe: "",
 		Comments: ""
 	});
+
+	useEffect(() => {
+		setLoading(false);
+	}, []);
 
 	const handleProjectTypeChange = (e) => {
 		if (e.target.checked) {
@@ -187,9 +191,8 @@ export default function LeadForm() {
 
 	return (
 		<>
-			{successfulRequest ? (
-				<StaticGallery text="Take a look at the beautiful work we can do for you. Go for the living that you deserve. We can help with that. If you want to contact us with any questions, please call 910-336-2054 or email info@4zimprov.com.">
-					{staticGalleryConstruction}
+			{!successfulRequest ? (
+				<StaticGallery images={staticGalleryConstruction} text="Take a look at the beautiful work we can do for you. Go for the living that you deserve. We can help with that. If you want to contact us with any questions, please call 910-336-2054 or email info@4zimprov.com.">
 				</StaticGallery>
 			) : (
 				<div className="py-16 mx-auto max-w-7xl px-6 lg:px-8">
@@ -707,7 +710,7 @@ export default function LeadForm() {
 							<div className="flex min-h-full items-center justify-center p-4">
 								<DialogPanel
 									transition
-									className="border border-amber-950 w-full max-w-md rounded-xl bg-amber-50 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0">
+									className="border border-red-500 w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0">
 									<DialogTitle
 										as="h3"
 										className="text-base/7 font-medium text-black">

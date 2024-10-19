@@ -29,7 +29,7 @@ export default function BusinessOwnerBanner() {
 				</span>
 				<img
 					className="h-8 hidden md:inline-block"
-					src="/images/veteran-star.png"
+					src="/images/aa.webp"
 				/>
 				<svg
 					id="chevron"

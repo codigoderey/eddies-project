@@ -3,8 +3,7 @@
 import { useState, useEffect, useContext } from "react";
 import { FirebaseContext } from "@/context/FirebaseContext";
 import JumbotronCentered from "@/components/JumbotronCenteredWithButton";
-import { SlideshowLightbox } from "lightbox.js-react";
-import Image from "next/image";
+import StaticGallery from "@/components/StaticGallery";
 
 export default function Gallery() {
 	const { loading, documents, fetchDocumentsByCategory } =
@@ -83,25 +82,8 @@ export default function Gallery() {
 								No images to show...
 							</p>
 						) : (
-							<SlideshowLightbox
-								className="grid grid-cols-3 gap-2 my-20"
-								images={images}
-								lightboxIdentifier="lightbox"
-								framework="next"
-								theme="day"
-								showThumbnails={true}>
-								{images.map((image) => (
-									<Image
-										src={image.src}
-										alt={image.alt}
-										height={500}
-										width={500}
-										data-lightboxjs="lightbox"
-										className="w-full h-full object-cover"
-										quality={80}
-									/>
-								))}
-							</SlideshowLightbox>
+							<StaticGallery
+								images={images} />
 						)}
 					</div>
 				)}

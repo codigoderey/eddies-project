@@ -89,7 +89,7 @@ export default function Footer() {
   <a 
     href="mailto:4zimprov@4zimprov.com?subject=Client%20request" 
     className="text-center text-sm text-leading-6 text-gray-50 mr-2 underline">
-    <strong>Email:</strong> 4zimprov@4zimprov.com
+    <strong>Email:</strong> info@4zimprov.com
   </a>
   <a 
     href="tel:8287195325" 

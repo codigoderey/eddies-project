@@ -15,7 +15,7 @@ export const sendEmail = async (mail, subject, htmlBody) => {
 	});
 
 	let info = await transporter.sendMail({
-		from: "4Z Improv <reynaldo@javascriptes.com>",
+		from: "4Z Improv <estimates@4zimprov.com>",
 		to: mail,
 		subject,
 		text: "You requested a quote.",

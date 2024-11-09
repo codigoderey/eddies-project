@@ -6,7 +6,7 @@ export default function HeaderSectionWithBgImage({
 	bottomText
 }) {
 	return (
-		<div className="relative h-[calc(90vh-88px)] bg-black/10 text-white">
+		<div className="relative h-[calc(100vh-140px)] bg-black/10 text-white">
 			<div className="absolute inset-0 -z-10 h-full">
 				<video
 					src="/videos/mountains-video-01.mp4"

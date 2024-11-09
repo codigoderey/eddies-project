@@ -8,10 +8,7 @@ function classNames(...classes) {
 }
 
 export default function AdminTabs() {
-	const { getAllCandidates, candidates, signOutUser } =
-		useContext(FirebaseContext);
-
-	const [listType, setListType] = useState("candidates");
+	const { getAllCandidates } = useContext(FirebaseContext);
 
 	useEffect(() => {
 		// pass the list type here to fech what we want
@@ -50,7 +47,6 @@ export default function AdminTabs() {
 
 	const handleTabClick = (tabName) => {
 		setCurrentTab(tabName);
-		setListType(tabName);
 	};
 
 	return (

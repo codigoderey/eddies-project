@@ -50,6 +50,7 @@ export default function Gallery() {
 
 	return (
 		<main>
+			<div className="border-b w-full"></div>
 			<JumbotronCentered
 				topText="We proudly showcase our work"
 				mainText="Projects gallery"
@@ -82,8 +83,7 @@ export default function Gallery() {
 								No images to show...
 							</p>
 						) : (
-							<StaticGallery
-								images={images} />
+							<StaticGallery images={images} />
 						)}
 					</div>
 				)}

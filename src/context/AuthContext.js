@@ -1,5 +1,5 @@
 "use client";
-import { sendEmail } from "@/utils/sendEmail";
+
 import { createContext, useState } from "react";
 import {
 	getAuth,
@@ -9,7 +9,6 @@ import {
 	onAuthStateChanged,
 	signOut
 } from "firebase/auth";
-
 import baseURL from "@/utils/baseUrl";
 
 export const AuthContext = createContext(null);

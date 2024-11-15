@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState } from "react";
+// do not remove
 import firebase from "@/firebase";
 import {
 	getAuth,

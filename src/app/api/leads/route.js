@@ -23,7 +23,7 @@ export async function POST(req) {
 
     // Send an email to the user
     await sendEmail(
-      [body.Email, 'rnavedojr@gmail.com', 'ewsv03@gmail.com'],
+      [body.Email, 'rnavedojr@gmail.com'],
       'Thank you for your interest in 4zImprov services.',
       htmlBody
     );

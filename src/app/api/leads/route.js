@@ -18,7 +18,7 @@ export async function POST(req) {
       <p><strong>Comments: </strong>${body.Comments}</p>
       <hr />
       <p>We will contact you according to the information above.</p>
-      <p>You can also visit our website at <a href="https://eddies-project.vercel.app/">https://eddies-project.vercel.app/</a>.</p>
+      <p>You can also visit our website at <a href="https://4zimprov.com/">https://4zimprov.com/</a>.</p>
     `;
 
     // Send an email to the user

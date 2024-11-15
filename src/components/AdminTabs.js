@@ -37,8 +37,8 @@ export default function AdminTabs() {
 		{
 			name: "Upload Images",
 			current: false,
-			content: <div></div>
-			// content: <ImagesHandler />
+			// content: <div></div>
+			content: <ImagesHandler />
 		}
 	];
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState } from "react";
+import firebase from "@/firebase";
 import {
 	getAuth,
 	sendSignInLinkToEmail,
@@ -9,6 +10,7 @@ import {
 	onAuthStateChanged,
 	signOut
 } from "firebase/auth";
+
 import baseURL from "@/utils/baseUrl";
 
 export const AuthContext = createContext(null);

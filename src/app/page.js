@@ -14,14 +14,14 @@ export default function Home() {
 			/>
 			<FeatureSectionLeftPicture />
 			<div className="border-b border-black border-2 w-full"></div>
-			<JumbotronCenteredWithButton
+			{/* <JumbotronCenteredWithButton
 				topText="We proudly showcase our work"
 				mainText="Real projects from real images"
 				subText="Feel the confidence of an outstanding work getting done the right way"
 				hrefLink="/gallery"
 				hrefText="View gallery"
 				hasButton={true}
-			/>
+			/> */}
 		</main>
 	);
 }

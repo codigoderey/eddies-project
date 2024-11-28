@@ -2,7 +2,7 @@ const navigation = {
   main: [
     { name: "About", href: "/about" },
     { name: "Get an estiamate", href: "/quote" },
-    { name: "Projects gallery", href: "/gallery" },
+    // { name: "Projects gallery", href: "/gallery" },
   ],
   social: [
     {
@@ -73,7 +73,7 @@ export default function Footer() {
   return (
     <footer className="bg-black">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        {/* <nav aria-label="Footer" className="sm:space-x-12 mb-6">
+        <nav aria-label="Footer" className="sm:space-x-12 mb-6">
           <div className="text-center">
             {navigation.main.map((item) => (
               <a
@@ -85,7 +85,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </nav> */}
+        </nav>
         <div className="flex items-center justify-center mb-6">
           <a
             href="mailto:4zimprov@4zimprov.com?subject=Client%20request"
